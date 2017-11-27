@@ -1,0 +1,19 @@
+{
+  "name": "Reytorres",
+  "version": "1.0.0",
+  "description": "Rey Torres photographer web site,",
+  "main": "javascript.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/79manuel/Reytorres.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/79manuel/Reytorres/issues"
+  },
+  "homepage": "https://github.com/79manuel/Reytorres#readme"
+}

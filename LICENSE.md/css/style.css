@@ -1,0 +1,446 @@
+/*=========== CAROUSEL =================*/
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body{
+      font-family: 'Montserrat', sans-serif;
+}
+.carousel-fade .carousel-inner .item {
+    opacity: 0;
+    transition-property: opacity;
+}
+.carousel-fade .carousel-inner .active {
+    opacity: 1;
+}
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+    left: 0;
+    opacity: 0;
+    z-index: 1;
+}
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right {
+    opacity: 1;
+}
+.carousel-fade .carousel-control {
+    z-index: 2;
+}
+@media all and (transform-3d),
+(-webkit-transform-3d) {
+    .carousel-fade .carousel-inner > .item.next,
+    .carousel-fade .carousel-inner > .item.active.right {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    .carousel-fade .carousel-inner > .item.prev,
+    .carousel-fade .carousel-inner > .item.active.left {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    .carousel-fade .carousel-inner > .item.next.left,
+    .carousel-fade .carousel-inner > .item.prev.right,
+    .carousel-fade .carousel-inner > .item.active {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+.item:nth-child(1) {
+    background: url("https://farm6.staticflickr.com/5277/14446344251_605abdb981_b.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.item:nth-child(2) {
+    background: url("https://farm6.staticflickr.com/5476/31349241815_92cb475d1a_b.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.item:nth-child(3) {
+    background: url("https://farm2.staticflickr.com/1636/25788442230_35a6b5e30b_b.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.item:nth-child(4) {
+    background: url("https://farm4.staticflickr.com/3742/10918576394_21c95a7ff5_b.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.carousel {
+    z-index: -99;
+}
+.carousel .item {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+.background {
+  background: url(../img/back.jpeg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.title{
+  text-align: center;
+  background-color: #ffffff;
+  padding-bottom: 1px;
+}
+
+.title > h1 {
+  padding-top: 12px;
+}
+
+.dropdown {
+  text-align: center;
+  margin: 0px;
+  margin-top: 5px;
+ }
+
+ .dropdown > button {
+  background-color: #ffffff;
+  border-radius: 0px;
+ }
+
+.dropdown-menu, .menu {
+text-align: center;
+margin-left:calc(50% - 80px);
+margin-right:calc(50% - 80px);
+}
+
+h4 {
+  color: black;
+  text-align: center;
+}
+
+.nav {
+  display: none;
+}
+
+.aside > a {
+  text-decoration: none;
+  color: black;
+}
+
+/*================ ABOUT ============*/
+
+.aside {
+  overflow-y: scroll;
+  text-align: left;
+  margin: 25px 0px 0px 0px;
+  max-height: 450px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+ }
+
+.about-title {
+  text-align: left;
+  padding-left: 22px;
+}
+
+.about-text {
+  padding-left: 25px;
+  font-family: 'Montserrat:600', sans-serif;
+}
+
+.about-image{
+  float: left;
+  margin: 0 10px 0 0;
+  width: 50%;
+  padding: 0 10px 0 0;
+ }
+/*===========End of ABOUT===============
+*/
+
+/*================ GALLERIES=============
+*/
+figure {
+  padding: 20px;
+  margin-bottom: 15px;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+figure > img {
+  width: 90%;
+  margin: auto;
+}
+
+.zoom {
+  border: 1px solid #333;
+  margin: 1%;
+  overflow: hidden;
+}
+.zoom img {
+  max-width: 100%;
+  -moz-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.zoom:hover img {
+  -moz-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.overlay {
+    position: relative;
+    width: 100%;
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: 200px;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%)
+}
+
+.overlay:hover .image {
+  opacity: 0.7;
+}
+
+.overlay:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  color: black;
+  font-size: 30px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  text-shadow: 2px 2px lightgrey;
+  padding: 10px 17px;
+}
+
+/*=========== End of GALLERIES ==========*/
+
+/*============ CONTACT ==================*/
+
+.contact-bold {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+}
+
+.contact-regular {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.no-decoration {
+  color: black;
+}
+
+.no-decoration:hover {
+  text-decoration: none;
+  text-shadow: 2px 2px lightgrey;
+  transition: 1s;
+}
+
+/*============== FOOTER =========*/
+.footer {
+    position: absolute;
+    bottom: -5px;
+    width: 100%;
+    height: 56px;
+    background-color: #f5f5f5;
+    text-align: center;
+    line-height: 70%;
+}
+
+.icons {
+  margin: 0px;
+  padding: 0px;
+}
+.icons > li{
+  display: inline-block;
+  margin: 7px 0px;
+}
+
+.footer-name {
+  font-size: 15px;
+  margin-top: 0px;
+}
+.social-icon{
+  width: 1.7em;
+}
+
+.gallery-laptop {
+  display: none;
+}
+
+
+/*====== End of FOOTER =========*/
+
+@media only screen and (min-width: 768px) {
+
+  .title {
+    width: 300px;
+    margin-top: 80px;
+    margin-left: 40px;
+    border-radius: 5px;
+  }
+
+  .title > h1 {
+  padding-top: 0px;
+  }
+
+  .dropdown {
+    display: none;
+    padding-top:5px;
+  }
+
+  .menu {
+    background-color: #ffffff;
+    list-style-type: none;
+    margin-top: 30px;
+    border-radius: 5px;
+    padding: 0px;
+    display: block;
+  }
+
+  .menu > li > a {
+    text-decoration-line: none;
+    text-decoration-style: none;
+  }
+
+  .menu > li > a > h4 {
+    text-align: center;
+  }
+
+  .nav {
+    width: 200px;
+    margin-top: 20px;
+    margin-left: 85px;
+  }
+
+
+  /*================ ABOUT ============*/
+
+  .aside {
+
+    text-align: left;
+    margin-top: 80px;
+    margin-left: 7vw;
+    max-height: 480px;
+    padding: 10px;
+    width: 100%;
+   }
+
+  .about-title {
+    text-align: left;
+    padding-left: 25px;
+    padding-right: 10px;
+  }
+
+  .about-text {
+    padding: 0 25px 10px 25px ;
+
+   }
+
+  .about-image{
+
+    float: left;
+    margin: 0 10px 0 0;
+    width: 30%;
+    padding: 0 10px 0 0;
+   }
+
+  .wrapper {
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+   }
+
+  .wrapper-1 {
+    width: 30%;
+    float: left;
+    margin-right: 60px;
+   }
+
+  .wrapper-2 {
+    float: left;
+    width: 50%;
+    margin-right: 0px;
+  }
+
+  .gallery-laptop {
+    display: inline-block;
+    text-align: center;
+    margin-left:-40px;
+  }
+
+  .gallery-laptop > li{
+    width: 45%;
+    margin-left: 10px;
+    display: inline-block;
+  }
+
+  .gallery-mobile {
+    display: none;
+  }
+}
+/*===========End of ABOUT===============*/
+
+
+@media only screen and (min-width: 1025px) {
+
+  .aside {
+      margin-left: 0.5vw;
+      padding:0px;
+      max-height: 500px;
+  }
+
+  .wrapper-1 {
+      margin-right: 5%;
+  }
+
+  .wrapper-2 {
+      width: 60%;
+  }
+
+  .gallery-laptop {
+  display: inline-block;
+  text-align: center;
+  margin-left:-40px;
+  }
+
+  .gallery-laptop > li{
+    width: 45%;
+    margin-left: 10px;
+    display: inline-block;
+  }
+
+  .gallery-mobile {
+    display: none;
+  }
+}
